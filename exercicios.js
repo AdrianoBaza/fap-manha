@@ -1,3 +1,149 @@
+/*
+11. Fazer uma função que recebe um mês e um ano como parâmetros e retorna o número de dias daquele mês daquele ano. 
+Dica: um ano é bissexto quando é múltiplo de 4 e não múltiplo de 100, ou também quando é múltiplo de 400.
+*/
+
+let anoBisexto = true;
+const input = require("readline-sync");
+let consulta = true;
+
+while (consulta) {
+    //console.log("QUANTIDADE DE DIAS DO MÊS")
+    let ano = input.questionInt("Digite o ano: ");
+    let mes = input.questionInt("Digite o mes: ");
+    
+    if (ano % 2 == 0 && ano % 100 == 0) {
+        anoBisexto = true;
+    } else {
+        anoBisexto = false;
+    }
+
+    if (anoBisexto && mes == 2) {
+        console.log(`O número de dias do mês ${mes} do ano de ${ano} é 29 dias`);
+    } else {
+        switch (mes) {
+            case 1:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 31 dias`);
+                break;
+            case 2:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 28 dias`);
+                break;
+            case 3:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 31 dias`);
+                break;
+            case 4:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 30 dias`);
+                break;
+            case 5:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 31 dias`);
+                break;
+            case 6:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 30 dias`);
+                break;
+            case 7:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 31 dias`);
+                break;
+            case 8:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 31 dias`);
+                break;
+            case 9:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 30 dias`);
+                break;
+            case 10:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 31 dias`);
+                break;
+            case 11:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 30 dias`);
+                break;
+            case 12:
+                console.log(`O número de dias do mês ${mes} do ano de ${ano} é 31 dias`);
+                break;
+            default:
+                console.log("Opção Inválida!");    
+        }
+   
+    }
+    let sair = input.question("Deseja fazer uma nova consulta: ").toUpperCase();
+    if (sair == 'S'.toUpperCase()) {
+        consulta = true;
+    } else {
+        consulta = false;
+    }
+
+}
+
+
+/*
+10. Crie um programa de conversão entre as temperaturas Celsius, Farenheit e Kelvin usando funções para isso. 
+O programa deve ler a opção escolhida pelo usuário, que escolhe uma determinada conversão entre escalas termométricas e, 
+em seguida, o programa solicita a temperatura a ser convertida. 
+As opções de conversão são as seguintes: utilize o switch case
+1.	de Celsius para Fahrenheit.
+2.	de Celsius para Kelvin.
+3.	de Fahrenheit para Celsius.
+4.	de Fahrenheit para Kelvin.
+5.	de Kelvin para Celsius.
+6.	de Kelvin para Fahrenheit
+
+
+const input = require("readline-sync");
+
+let num = 0;
+let opcao = 0;
+let celsius = 0;
+let resultado = 0;
+let temperaturaOrigem;
+let temperaturaDestino;
+let i = true;
+
+function conversorTemperatura(opcao, num) {
+    if (opcao == 1) { // F = 1.8 * num + 32;
+        console.log("CONVERSOR DE CELSIUS PARA FAHRENHEIT:");
+        resultado = 1.8 * num + 32;
+        temperaturaOrigem = "C";
+        temperaturaDestino = "F";
+    } else if (opcao == 2) { // K = C + 273
+        console.log("CONVERSOR DE CELSIUS PARA KELVIN");
+        resultado = num + 273; 
+        temperaturaOrigem = "C";
+        temperaturaDestino = "K";
+    } else if (opcao == 3) { // C = (F − 32) / 1.8
+        console.log("CONVERSOR DE FAHRENHEIT PARA CELSIUS:");
+        resultado = (num - 32) / 1.8;
+        temperaturaOrigem = "F";
+        temperaturaDestino = "C";
+    } else if (opcao == 4) { // K = (F - 32) * 5/9 + 273
+        console.log("CONVERSOR DE FAHRENHEIT PARA KELVIN");
+        resultado = (num - 32) * (5/9) + 273;
+        temperaturaOrigem = "F";
+        temperaturaDestino = "K"; 
+    } else if (opcao == 5) { // C = K - 273
+        console.log("CONVERSOR DE KELVIN PARA CELSIUS:");
+        resultado = (num - 32) / 1.8;
+        temperaturaOrigem = "K";
+        temperaturaDestino = "C";
+    } else if (opcao == 6) { // F = (K - 273) * 1.8 + 32 
+        console.log("CONVERSOR DE KELVIN PARA FAHRENHEIT");
+        resultado = (num - 273) * 1.8 + 32; 
+        temperaturaOrigem = "K";
+        temperaturaDestino = "F";
+    }
+    console.log(`A temperatura de ${num}º ${temperaturaOrigem} é equivalente a ${resultado}º ${temperaturaDestino}`);    
+}
+
+
+while (i) {
+    let conversor  = input.questionInt("Digite a sua opção de conversão: ")
+    let temperatura = input.questionInt("Digite a temperatura: ");
+    console.log(conversorTemperatura(conversor, temperatura));
+    let sair = input.question("Deseja fazer uma  nova conversão (S ou N): ").toUpperCase();
+    if (sair == 'S'.toUpperCase()) {
+        i = true;
+    } else {
+        i = false;
+    }
+}
+*/
 
 
 
