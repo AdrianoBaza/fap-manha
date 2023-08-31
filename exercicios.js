@@ -3,6 +3,7 @@
 Dica: um ano é bissexto quando é múltiplo de 4 e não múltiplo de 100, ou também quando é múltiplo de 400.
 */
 
+/*
 let anoBisexto = true;
 const input = require("readline-sync");
 let consulta = true;
@@ -71,70 +72,93 @@ while (consulta) {
     }
 
 }
-
+*/
 
 /*
 10. Crie um programa de conversão entre as temperaturas Celsius, Farenheit e Kelvin usando funções para isso. 
 O programa deve ler a opção escolhida pelo usuário, que escolhe uma determinada conversão entre escalas termométricas e, 
 em seguida, o programa solicita a temperatura a ser convertida. 
 As opções de conversão são as seguintes: utilize o switch case
+
 1.	de Celsius para Fahrenheit.
 2.	de Celsius para Kelvin.
 3.	de Fahrenheit para Celsius.
 4.	de Fahrenheit para Kelvin.
 5.	de Kelvin para Celsius.
 6.	de Kelvin para Fahrenheit
-
+*/
 
 const input = require("readline-sync");
 
 let num = 0;
-let opcao = 0;
-let celsius = 0;
-let resultado = 0;
 let temperaturaOrigem;
+let valorTemperaturaOrigem = 0;
+let celsius = 0;
+let temperaturaConvertida = 0;
 let temperaturaDestino;
 let i = true;
 
-function conversorTemperatura(opcao, num) {
-    if (opcao == 1) { // F = 1.8 * num + 32;
-        console.log("CONVERSOR DE CELSIUS PARA FAHRENHEIT:");
-        resultado = 1.8 * num + 32;
-        temperaturaOrigem = "C";
-        temperaturaDestino = "F";
-    } else if (opcao == 2) { // K = C + 273
-        console.log("CONVERSOR DE CELSIUS PARA KELVIN");
-        resultado = num + 273; 
-        temperaturaOrigem = "C";
-        temperaturaDestino = "K";
-    } else if (opcao == 3) { // C = (F − 32) / 1.8
-        console.log("CONVERSOR DE FAHRENHEIT PARA CELSIUS:");
-        resultado = (num - 32) / 1.8;
-        temperaturaOrigem = "F";
-        temperaturaDestino = "C";
-    } else if (opcao == 4) { // K = (F - 32) * 5/9 + 273
-        console.log("CONVERSOR DE FAHRENHEIT PARA KELVIN");
-        resultado = (num - 32) * (5/9) + 273;
-        temperaturaOrigem = "F";
-        temperaturaDestino = "K"; 
-    } else if (opcao == 5) { // C = K - 273
-        console.log("CONVERSOR DE KELVIN PARA CELSIUS:");
-        resultado = (num - 32) / 1.8;
-        temperaturaOrigem = "K";
-        temperaturaDestino = "C";
-    } else if (opcao == 6) { // F = (K - 273) * 1.8 + 32 
-        console.log("CONVERSOR DE KELVIN PARA FAHRENHEIT");
-        resultado = (num - 273) * 1.8 + 32; 
-        temperaturaOrigem = "K";
-        temperaturaDestino = "F";
-    }
-    console.log(`A temperatura de ${num}º ${temperaturaOrigem} é equivalente a ${resultado}º ${temperaturaDestino}`);    
+function menu(){
+    console.log("CONVERSOR DE TEMPERATURAS");
+    console.log("--------------------------------------------");
+    const menu = [' (1) Celsius para Fahrenheit,\n(2) Celsius para Kelvin,\n(3) Fahrenheit para Celsius,\n(4) Fahrenheit para Kelvin,\n(5) Kelvin para Celsius,\n(6) Kelvin para Fahrenheit'];
+    console.log(menu);
+    console.log("--------------------------------------------");
 }
 
+function conversorTemperatura(opcao, valorTemperaturaOrigem) {
+
+    switch (opcao) {
+        case 1:
+            onsole.log("CONVERSOR DE CELSIUS PARA FAHRENHEIT:");
+            temperaturaConvertida = 1.8 * valorTemperaturaOrigem + 32;
+            temperaturaOrigem = "Celsius";
+            temperaturaDestino = "Fahrenheit";
+            break;
+        case 2: 
+            console.log("CONVERSOR DE CELSIUS PARA KELVIN");
+            temperaturaConvertida = valorTemperaturaOrigem + 273; 
+            temperaturaOrigem = "Celsius";
+            temperaturaDestino = "Kelvin";
+            break;
+        case 3:
+            console.log("CONVERSOR DE FAHRENHEIT PARA CELSIUS:");
+            temperaturaConvertida = (valorTemperaturaOrigem - 32) / 1.8;
+            emperaturaOrigem = "Fahrenheit";
+            temperaturaDestino = "Celsius="; 
+            break;
+        case 4: 
+            console.log("CONVERSOR DE FAHRENHEIT PARA KELVIN");
+            temperaturaConvertida = (valorTemperaturaOrigem - 32) * (5/9) + 273;
+            temperaturaOrigem = "Fahrenheit";
+            temperaturaDestino = "Kelvin";
+            break;
+        case 5: 
+            console.log("CONVERSOR DE KELVIN PARA CELSIUS:");
+            temperaturaConvertida = (valorTemperaturaOrigem - 32) / 1.8;
+            temperaturaOrigem = "Kelvin";
+            temperaturaDestino = "Celsius";
+            break;
+        case 6: 
+            console.log("CONVERSOR DE KELVIN PARA FAHRENHEIT");
+            temperaturaConvertida = (valorTemperaturaOrigem - 273) * 1.8 + 32; 
+            temperaturaOrigem = "Kelvin";
+            temperaturaDestino = "Fahrenheit";
+            break;
+        default:
+            console.log("Opção inválida");
+    }
+
+    console.log(`A conversão de ${valorTemperaturaOrigem} º de ${temperaturaOrigem} para  ${temperaturaDestino} é equivalente a ${temperaturaConvertida}º ${temperaturaDestino}`);    
+
+
+}
+
+menu();
 
 while (i) {
-    let conversor  = input.questionInt("Digite a sua opção de conversão: ")
-    let temperatura = input.questionInt("Digite a temperatura: ");
+    let conversor  = input.questionInt("Informe o número corresponente a conversão desejada: ")
+    let temperatura = input.questionInt("Informe a temperatura: ");
     console.log(conversorTemperatura(conversor, temperatura));
     let sair = input.question("Deseja fazer uma  nova conversão (S ou N): ").toUpperCase();
     if (sair == 'S'.toUpperCase()) {
@@ -143,7 +167,6 @@ while (i) {
         i = false;
     }
 }
-*/
 
 
 
