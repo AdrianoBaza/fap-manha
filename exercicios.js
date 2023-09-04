@@ -74,6 +74,8 @@ while (consulta) {
 }
 */
 
+
+
 /*
 10. Crie um programa de conversão entre as temperaturas Celsius, Farenheit e Kelvin usando funções para isso. 
 O programa deve ler a opção escolhida pelo usuário, que escolhe uma determinada conversão entre escalas termométricas e, 
@@ -86,7 +88,7 @@ As opções de conversão são as seguintes: utilize o switch case
 4.	de Fahrenheit para Kelvin.
 5.	de Kelvin para Celsius.
 6.	de Kelvin para Fahrenheit
-*/
+
 
 const input = require("readline-sync");
 
@@ -167,7 +169,52 @@ while (i) {
         i = false;
     }
 }
+*/
 
+
+/*
+9. Elabore um programa em JS para que leia três números e mostre-os em ordem crescente
+*/
+
+
+
+/*
+8. Uma empresa paga R$ 10,00 por hora normal trabalhada e R$ 15,00 por hora extra. 
+Escreva um programa que leia o total de horas normais e o total de horas extras trabalhadas 
+por um empregado em um ano e calcule o salário anual deste trabalhador.
+
+
+const input = require("readline-sync");
+
+function salarioAnual(horaNormal, horaExtra) {
+    let valorTotalHoraNormal = horaNormal * 10;
+    let valorTotalHoraExtra = horaExtra * 15;
+    return valorTotalHoraNormal + valorTotalHoraExtra; 
+}
+
+function resumoSalarioAnual() {
+    console.log("SALÁRIO BRUTO ANUAL - COMPETÊNCIA 2023");
+    console.log("--------------------------------------------------");
+    console.log(`Total de hora normal: ${quantidadeHoraNormal} horas | Valor por hora: R$ ${valorHoraNormal}`);
+    console.log(`Total de hora extra: ${quantidadeHoraExtra} horas | Valor por hora: R$ ${valorHoraExtra}`);
+}
+
+console.log("CALCULADORA SALÁRIO BRUTO ANUAL - COMPETÊNCIA 2023");
+console.log("--------------------------------------------------");
+let quantidadeHoraNormal= input.questionFloat('Digite a quantidade de hora normal trabalhada: ');
+let quantidadeHoraExtra = input.questionFloat('Digite a quantidade de hora extra trabalhada: ');
+let valorHoraNormal = 10;
+let valorHoraExtra = 15;
+
+resumoSalarioAnual();
+console.log(`O salário bruto anual é de R$ ${salarioAnual(quantidadeHoraNormal, quantidadeHoraExtra)}`);
+*/
+
+
+
+/*
+7. Faça um programa para ler um horário (hora:minuto:segundo) de início e a duração, em segundos, de uma experiência biológica. O programa deve informar o horário (hora:minuto:segundo) de término da mesma.
+*/
 
 
 /*
@@ -199,12 +246,13 @@ for (let i = 0; i <= n; i++) {
         console.log(i);
     }
 }
+*/
+
 
 /*
 4. Faça um programa que calcule e mostre a soma dos 50 primeiros números pares. 
 Faça três versões desse programa, cada uma usando uma estrutura de repetição diferente (for, while, do-while). 
 Qual das três estruturas é a mais adequada para este programa? Por que?
-
 
 
 // Loop FOR
@@ -256,13 +304,13 @@ console.log(`Soma dos números pares é ${somaPares}`);
 */
 
 
-/*3. Uma determinada empresa vende seus produtos em quatro diferentes estados. 
+/*
+3. Uma determinada empresa vende seus produtos em quatro diferentes estados. 
 Cada estado possui uma taxação de imposto diferente sobre o produto (MG: 7%; SP: 12%; RJ: 15%; MS: 8%). 
 Faça um programa em Javascript, que o usuário entre com o valor e o estado destino do produto e o programa 
 retorne o preço final do produto acrescido do imposto correspondente ao estado onde será vendido. 
-O programa deve mostrar uma mensagem de erro caso o estado fornecido não esteja na lista de estados válidos.*/
+O programa deve mostrar uma mensagem de erro caso o estado fornecido não esteja na lista de estados válidos.
 
-/*
 const input = require("readline-sync");
 
 let valor = input.questionInt(`Digite o valor: `);
@@ -286,7 +334,6 @@ switch (estado) {
 }
 console.log(`O preço final do produto para o estado ${estado} é R$ ${valor}`);
 */
-
 
 
 /*
@@ -324,4 +371,5 @@ function notas() {
 }   
 
 let nome = input.question('Digite o seu nome: ');
-console.log('Média: ' + notas());*/
+console.log('Média: ' + notas());
+*/
